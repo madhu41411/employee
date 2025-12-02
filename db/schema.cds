@@ -31,13 +31,21 @@ entity EMPLOYEE_STATUS {
         STATUS_NAME : String(50);
 }
 
-view EmployeeDetails as
-    select from T_EMPLOYEE_MASTER {
-        EMPLOYEE_ID,
-        FIRST_NAME,
-        LAST_NAME,
-        EMAIL,
-        STATUS.STATUS_NAME as STATUS,
-        QUALIFICATIONS.DEGREE,
-        QUALIFICATIONS.UNIVERSITY
+view V_EMPLOYEE as
+    select from T_EMPLOYEE_MASTER as master
+    left join T_EMPLOYEE_QUALIFICATIONS as qual
+        on master.EMPLOYEE_ID = qual.EMPLOYEE_ID
+    left join EMPLOYEE_STATUS as status
+        on master.EMP_STATUS_ID = status.STATUS_ID
+    {
+        key master.EMPLOYEE_ID,
+            master.FIRST_NAME,
+            master.LAST_NAME,
+            master.EMAIL,
+            master.DATE_OF_BIRTH,
+            qual.DEGREE,
+            qual.UNIVERSITY,
+            qual.GRADUATION_YEAR,
+            status.STATUS_NAME         as EMP_STATUS_NAME,
+            master.STATUS_CHANGED_DATE as STATUS_CHANGE_DATE
     };

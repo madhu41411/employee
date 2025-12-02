@@ -8,4 +8,11 @@ service EmployeeService {
 
     @readonly
     entity Status         as projection on my.EMPLOYEE_STATUS;
+
+    @readonly
+    entity EmployeeView   as projection on my.V_EMPLOYEE;
+
+    function downloadEmployeeData()               returns String;
+    action   uploadEmployeeData(content : String) returns String;
+    action   cleanupInactiveEmployees();
 }
