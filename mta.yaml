@@ -25,6 +25,7 @@ modules:
           srv-url: ${default-url}
     requires:
       - name: employee-db
+      - name: employee-auth
 
   - name: employee-db
     type: hdb
@@ -51,6 +52,16 @@ resources:
     parameters:
       service: hana
       service-plan: hdi-shared
+
+  - name: employee-auth
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: xsuaa
+      service-plan: application
+      path: ./xs-security.json
+      config:
+        xsappname: employee-${org}-${space}
+        tenant-mode: dedicated
 
 
 
