@@ -57,5 +57,5 @@ resources:
     type: com.sap.xs.job-scheduler
     parameters:
       service: jobscheduler
-      service-plan: standard
+      service-plan: lite
 
