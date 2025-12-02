@@ -7,8 +7,8 @@
         "applicationVersion": {
             "version": "1.0.0"
         },
-        "title": "{{appTitle}}",
-        "description": "{{appDescription}}",
+        "title": "Employee Management",
+        "description": "Manage Employee Data",
         "sourceTemplate": {
             "id": "@sap/generator-fiori:basic",
             "version": "1.0.0"
