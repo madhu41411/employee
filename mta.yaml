@@ -25,7 +25,6 @@ modules:
           srv-url: ${default-url}
     requires:
       - name: employee-db
-      - name: employee-jobscheduler
 
   - name: employee-db
     type: hdb
@@ -53,9 +52,5 @@ resources:
       service: hana
       service-plan: hdi-shared
 
-  - name: employee-jobscheduler
-    type: com.sap.xs.job-scheduler
-    parameters:
-      service: jobscheduler
-      service-plan: lite
+
 
