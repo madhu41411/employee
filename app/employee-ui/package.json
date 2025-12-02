@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "Employee UI",
     "scripts": {
-        "build:cf": "ui5 build preload --clean-dest --config ui5.yaml --include-task=generateManifestBundle generateCachebusterInfo"
+        "build:cf": "ui5 build --clean-dest"
     },
     "devDependencies": {
         "@ui5/cli": "^3.0.0",
