@@ -1,0 +1,27 @@
+<mvc:View
+    controllerName="sap.employee.ui.controller.EmployeeList"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc">
+    <Page title="{i18n>employeeListTitle}">
+        <content>
+            <Table id="employeeTable" items="{/Employee}">
+                <columns>
+                    <Column><Text text="{i18n>firstName}"/></Column>
+                    <Column><Text text="{i18n>lastName}"/></Column>
+                    <Column><Text text="{i18n>email}"/></Column>
+                    <Column><Text text="{i18n>status}"/></Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{FIRST_NAME}"/>
+                            <Text text="{LAST_NAME}"/>
+                            <Text text="{EMAIL}"/>
+                            <Text text="{STATUS/STATUS_NAME}"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

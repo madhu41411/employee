@@ -1,0 +1,20 @@
+//@ui5-bundle sap/employee/ui/Component-preload.js
+sap.ui.require.preload({
+	"sap/employee/ui/Component.js":function(){
+sap.ui.define(["sap/ui/core/UIComponent","sap/ui/Device","sap/employee/ui/model/models"],function(e,i,t){"use strict";return e.extend("sap.employee.ui.Component",{metadata:{manifest:"json"},init:function(){e.prototype.init.apply(this,arguments);this.getRouter().initialize();this.setModel(t.createDeviceModel(),"device")}})});
+},
+	"sap/employee/ui/controller/App.controller.js":function(){
+sap.ui.define(["sap/ui/core/mvc/Controller"],function(e){"use strict";return e.extend("sap.employee.ui.controller.App",{onInit:function(){}})});
+},
+	"sap/employee/ui/controller/EmployeeList.controller.js":function(){
+sap.ui.define(["sap/ui/core/mvc/Controller"],function(e){"use strict";return e.extend("sap.employee.ui.controller.EmployeeList",{onInit:function(){}})});
+},
+	"sap/employee/ui/i18n/i18n.properties":'appTitle=Employee Management\nappDescription=Manage Employees and Qualifications\nemployeeListTitle=Employees\nfirstName=First Name\nlastName=Last Name\nemail=Email\nstatus=Status\ndegree=Degree\nuniversity=University\n',
+	"sap/employee/ui/manifest.json":'{"_version":"1.12.0","sap.app":{"id":"sap.employee.ui","type":"application","i18n":"i18n/i18n.properties","applicationVersion":{"version":"1.0.0"},"title":"{{appTitle}}","description":"{{appDescription}}","sourceTemplate":{"id":"@sap/generator-fiori:basic","version":"1.0.0"},"dataSources":{"mainService":{"uri":"/odata/v4/employee/","type":"OData","settings":{"annotations":[],"odataVersion":"4.0"}}}},"sap.ui":{"technology":"UI5","icons":{"icon":"","favIcon":"","phone":"","phone@2":"","tablet":"","tablet@2":""},"deviceTypes":{"desktop":true,"tablet":true,"phone":true}},"sap.ui5":{"flexEnabled":true,"dependencies":{"minUI5Version":"1.71.0","libs":{"sap.ui.core":{},"sap.m":{},"sap.f":{},"sap.ui.layout":{}}},"contentDensities":{"compact":true,"cozy":true},"models":{"i18n":{"type":"sap.ui.model.resource.ResourceModel","settings":{"bundleName":"sap.employee.ui.i18n.i18n"}},"":{"dataSource":"mainService","preload":true,"settings":{"synchronizationMode":"None","operationMode":"Server","autoExpandSelect":true,"earlyRequests":true}}},"resources":{"css":[{"uri":"css/style.css"}]},"routing":{"config":{"routerClass":"sap.m.routing.Router","viewType":"XML","async":true,"viewPath":"sap.employee.ui.view","controlAggregation":"pages","controlId":"app","clearControlAggregation":false},"routes":[{"name":"RouteEmployeeList","pattern":":?query:","target":["TargetEmployeeList"]}],"targets":{"TargetEmployeeList":{"viewType":"XML","transition":"slide","clearControlAggregation":false,"viewId":"EmployeeList","viewName":"EmployeeList"}}},"rootView":{"viewName":"sap.employee.ui.view.App","type":"XML","async":true,"id":"App"}}}',
+	"sap/employee/ui/model/models.js":function(){
+sap.ui.define(["sap/ui/model/json/JSONModel","sap/ui/Device"],function(e,n){"use strict";return{createDeviceModel:function(){var i=new e(n);i.setDefaultBindingMode("OneWay");return i}}});
+},
+	"sap/employee/ui/view/App.view.xml":'<mvc:View\n    controllerName="sap.employee.ui.controller.App"\n    xmlns:html="http://www.w3.org/1999/xhtml"\n    xmlns:mvc="sap.ui.core.mvc"\n    displayBlock="true"\n    xmlns="sap.m"><App id="app"/></mvc:View>\n',
+	"sap/employee/ui/view/EmployeeList.view.xml":'<mvc:View\n    controllerName="sap.employee.ui.controller.EmployeeList"\n    xmlns="sap.m"\n    xmlns:mvc="sap.ui.core.mvc"><Page title="{i18n>employeeListTitle}"><content><Table id="employeeTable" items="{/Employee}"><columns><Column><Text text="{i18n>firstName}"/></Column><Column><Text text="{i18n>lastName}"/></Column><Column><Text text="{i18n>email}"/></Column><Column><Text text="{i18n>status}"/></Column></columns><items><ColumnListItem><cells><Text text="{FIRST_NAME}"/><Text text="{LAST_NAME}"/><Text text="{EMAIL}"/><Text text="{STATUS/STATUS_NAME}"/></cells></ColumnListItem></items></Table></content></Page></mvc:View>\n'
+});
+//# sourceMappingURL=Component-preload.js.map
