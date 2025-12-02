@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "Employee UI",
     "scripts": {
-        "build:cf": "ui5 build --clean-dest"
+        "build:cf": "mkdir -p dist && cp -r webapp/* dist/ && cp webapp/xs-app.json dist/xs-app.json"
     },
     "devDependencies": {
         "@ui5/cli": "^3.0.0",
