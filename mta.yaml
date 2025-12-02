@@ -39,7 +39,7 @@ modules:
     type: html5
     path: app/employee-ui
     build-parameters:
-      build-result: dist
+      build-result: employee-ui.zip
       builder: custom
       commands:
         - npm install
