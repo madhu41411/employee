@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "Employee UI",
     "scripts": {
-        "build:cf": "rm -rf dist employee-ui.zip && mkdir -p dist && cp -r webapp/* dist/ && cd dist && zip -r ../employee-ui.zip ."
+        "build:cf": "rm -rf dist && mkdir -p dist && cp -r webapp/* dist/"
     },
     "devDependencies": {
         "@ui5/cli": "^3.0.0",
